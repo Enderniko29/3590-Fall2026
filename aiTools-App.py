@@ -15,14 +15,18 @@ st.caption("Local LLM via Ollama · granite4.1:3b · no API key")
 
 task = st.text_area(
     "What should the model do?",
-    "Write a two-sentence email inviting students to office hours.",
+    "Write a five sentence email about finding treasure on an island",
     height=100,
 )
 
-requirement = st.text_input(
-    "Requirement (optional) — a rule the output must satisfy",
-    "Mention the room number INV1 455",
-)
+requirement = st.text_input("What do you want the assistant to create?",
+                            ["Email",
+                             "Quiz",
+                             "Explanation",
+                             "Programming exercise",
+                             "Announcement"
+                             ]
+                            )
 
 retries = st.slider("Max retries if the requirement fails", 1, 5, 3)
 
