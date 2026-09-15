@@ -56,6 +56,7 @@ with plots:
                          color="Temperature (c)",
                          title="3D Visualization of the Bay Floor")
     fig3.update_scenes(zaxis_autorange="reversed")
+    fig3.update_traces(marker_size=3)
     st.plotly_chart(fig3)
 
 with maps:
