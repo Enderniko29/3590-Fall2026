@@ -2,6 +2,10 @@ import streamlit as st
 from mellea import start_session
 from mellea.stdlib.sampling import RejectionSamplingStrategy
 
+# To run streamlit:
+#  streamlit run name_of_file.py
+#  or
+#  python -m streamlit run name_of_file.py
 
 @st.cache_resource
 def get_session():
@@ -30,7 +34,7 @@ if st.button("Generate", type="primary"):
     m = get_session()
     reqs = [requirement] if requirement.strip() else []
 
-    with st.spinner("Thinking..."):
+    with st.spinner("Thinking..."): # Hci principle - let the user know something is happening
         result = m.instruct(
             task,
             requirements=reqs,
